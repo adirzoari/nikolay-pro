@@ -39,7 +39,7 @@ export default function SiteHeader() {
   return <header ref={root} className="site-nav-shell">
     <div className="site-nav-bar">
       <a className="nav-brand" href={url('/')} aria-label={t('ניקולאי — לעמוד הראשי')}>
-        <Image src="/images/logo-nikolay.png" alt={t('ניקולאי מערכות מיזוג אוויר')} width={66} height={70} priority/>
+        <Image src="/images/logo-nikolay.png" alt={t('ניקולאי מערכות מיזוג אוויר')} width={64} height={68} priority/>
       </a>
       <nav id="primary-navigation" className={`primary-navigation ${open ? 'is-open' : ''}`} aria-label={t('ניווט ראשי')}>
         {links.map(([href, text]) => <a key={href} href={url(href)} aria-current={href === '/' + slug ? 'page' : undefined} onClick={() => setOpen(false)}>{text}</a>)}

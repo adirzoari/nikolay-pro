@@ -47,15 +47,39 @@ for(const lang of langs)for(const slug of slugs) {
  assert.ok(html.includes('rel="canonical"'),`Canonical: ${route}`);
  for(const alternate of [...langs,'x-default'])assert.ok(html.includes(`hrefLang="${alternate}"`)||html.includes(`hreflang="${alternate}"`),`Missing alternate ${alternate}: ${route}`);
  assert.ok(html.includes('application/ld+json'),`Structured data: ${route}`);
- for(const m of html.matchAll(/src="(\/images\/[^"?]+)(?:\?[^" ]*)?"/g))assert.ok(fs.existsSync(path.join(base,'public',m[1])),`Missing asset ${m[1]}`);
+ // Every image URL, including the srcset candidates and the preload links that `priority` emits.
+ // The _gen/css/og prefix check is the guard against image-loader.ts silently falling back to an
+ // original that no longer exists in public/ because the path missed image-manifest.ts.
+ for(const m of html.matchAll(/(?:src|srcset|imagesrcset)="([^"]+)"/gi))for(const candidate of m[1].split(',')){
+  const url=candidate.trim().split(/\s+/)[0].split('?')[0];
+  if(!url.startsWith('/images/'))continue;
+  assert.ok(fs.existsSync(path.join(base,'public',url)),`Missing asset ${url}: ${route}`);
+  assert.ok(/^\/images\/(_gen|css|og)\//.test(url),`Unoptimized original shipped: ${url}: ${route}`);
+ }
  // Inspect static body text without scripts, styles, or the multilingual language menu.
  let body=html.split('<body>')[1]?.split('</body>')[0]||'';
  body=body.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g,'').replace(/<style\b[^>]*>[\s\S]*?<\/style>/g,'').replace(/<details class="language-menu">[\s\S]*?<\/details>/g,'').replace(/<[^>]+>/g,'');
  if(lang!=='he')assert.ok(!/[\u0590-\u05ff]/.test(body),`Hebrew body text: ${route}`);
  pages++;
 }
+// Stylesheets reference images too, and none of that shows up in the HTML.
+const cssDir=path.join(base,'out/_next/static/css');
+for(const name of fs.existsSync(cssDir)?fs.readdirSync(cssDir):[]){
+ const text=fs.readFileSync(path.join(cssDir,name),'utf8');
+ for(const m of text.matchAll(/url\(\s*["']?(\/images\/[^"')]+)["']?\s*\)/g))
+  assert.ok(fs.existsSync(path.join(base,'public',m[1])),`Missing CSS asset ${m[1]} in ${name}`);
+}
+// The JSON-LD logo is an absolute URL inside a script tag, so no markup scan would catch it rotting.
+assert.ok(fs.existsSync(path.join(base,'public/images/og/logo-512.png')),'Missing JSON-LD logo');
+// Budgets, so a stray full-size original in assets/ fails the build instead of shipping.
+const imageFiles=(function walk(dir){return fs.existsSync(dir)?fs.readdirSync(dir,{withFileTypes:true}).flatMap(e=>e.isDirectory()?walk(path.join(dir,e.name)):[path.join(dir,e.name)]):[];})(path.join(base,'out/images'));
+const sizes=imageFiles.map(file=>fs.statSync(file).size);
+const total=sizes.reduce((sum,size)=>sum+size,0);
+assert.ok(Math.max(...sizes)<=400_000,`Oversized image variant: ${Math.max(...sizes)} bytes`);
+assert.ok(total<=8_000_000,`out/images budget blown: ${total} bytes`);
+
 const sitemap=fs.readFileSync(path.join(base,'out/sitemap.xml'),'utf8');
 assert.equal((sitemap.match(/<url>/g)||[]).length,28);
 assert.ok(sitemap.includes('/certificates'));
 assert.ok(fs.readFileSync(path.join(base,'out/robots.txt'),'utf8').includes('Sitemap:'));
-console.log(`Static SEO checks: ${pages} localized pages; 28 sitemap entries; languages, directions, headings, canonical, alternates, JSON-LD, and assets passed.`);
+console.log(`Static SEO checks: ${pages} localized pages; 28 sitemap entries; languages, directions, headings, canonical, alternates, JSON-LD, and assets passed; ${imageFiles.length} image variants, ${(total/1048576).toFixed(2)} MB.`);

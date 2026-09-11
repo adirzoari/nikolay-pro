@@ -44,8 +44,9 @@ export function ProjectGallery({ title, photos }: { title: string; photos: strin
         </button>
         <dialog ref={dialog} className="project-gallery-dialog" aria-label={title} onCancel={() => setOpen(false)} onClose={() => setOpen(false)} onClick={event => { if (event.target === event.currentTarget) setOpen(false); }}>
             {open && <>
-                {/* Ambient wash: the current photo, blurred, so the frame picks up the room's light. */}
-                <Image className="project-gallery-wash" src={photos[index]} alt="" aria-hidden width={2560} height={1920} sizes="100vw"/>
+                {/* Ambient wash: the current photo, blurred, so the frame picks up the room's light.
+                    Requested tiny on purpose — a 58px blur scaled to the viewport cannot show more detail. */}
+                <Image className="project-gallery-wash" src={photos[index]} alt="" aria-hidden width={192} height={144}/>
                 <header>
                     <div><strong>{title}</strong><small>{caption(index)}</small></div>
                     <button onClick={() => setOpen(false)} aria-label={t("סגירת התצוגה")}><X size={20}/></button>
@@ -56,7 +57,7 @@ export function ProjectGallery({ title, photos }: { title: string; photos: strin
                     <button className="project-gallery-arrow" onClick={() => step(rtl ? -1 : 1)} aria-label={t("התמונה הבאה")}><ChevronLeft size={26}/></button>
                 </div>
                 <div className="project-gallery-strip" ref={strip} onClick={event => event.stopPropagation()}>
-                    {photos.map((photo, position) => <button key={photo} className={position === index ? 'active' : ''} onClick={() => setIndex(position)} aria-label={caption(position)} aria-current={position === index}><Image src={photo} alt="" aria-hidden width={2560} height={1920} sizes="110px"/></button>)}
+                    {photos.map((photo, position) => <button key={photo} className={position === index ? 'active' : ''} onClick={() => setIndex(position)} aria-label={caption(position)} aria-current={position === index}><Image src={photo} alt="" aria-hidden width={112} height={84}/></button>)}
                 </div>
             </>}
         </dialog>

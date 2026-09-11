@@ -25,7 +25,7 @@ export function structuredData(language: Language, slug: string) {
   const home = origin + localizedUrl(language);
   return {
     '@context': 'https://schema.org', '@graph': [
-      { '@type': 'Organization', '@id': origin + '/#business', name: t('ניקולאי מערכות מיזוג אוויר'), url: origin, telephone: '+972523322821', logo: origin + '/images/logo-nikolay.png', sameAs: socialProfiles.map(profile => profile.href) },
+      { '@type': 'Organization', '@id': origin + '/#business', name: t('ניקולאי מערכות מיזוג אוויר'), url: origin, telephone: '+972523322821', logo: origin + '/images/og/logo-512.png', sameAs: socialProfiles.map(profile => profile.href) },
       { '@type': 'WebSite', '@id': origin + '/#website', url: origin, name: t('ניקולאי מערכות מיזוג אוויר'), inLanguage: languages.map(item => item.code), publisher: { '@id': origin + '/#business' } },
       { '@type': 'WebPage', '@id': origin + localizedUrl(language, '/' + slug), url: origin + localizedUrl(language, '/' + slug), inLanguage: language, isPartOf: { '@id': origin + '/#website' } },
       ...(slug ? [{ '@type': 'BreadcrumbList', itemListElement: [ { '@type': 'ListItem', position: 1, name: t('בית'), item: home }, { '@type': 'ListItem', position: 2, name: t(slug === 'guide' ? 'מדריך שימושי' : slug === 'projects' ? 'פרויקטים' : 'תעודות'), item: origin + localizedUrl(language, '/' + slug) } ] }] : []),
