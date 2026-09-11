@@ -63,3 +63,6 @@
 .hero-social{margin-top:24px}
 @media(max-width:900px){.hero-social{justify-content:center}}
 @media(prefers-reduced-motion:reduce){.social-links a{transition:none}.social-links a:hover{transform:none}}
+
+/* Native form controls, scrollbars and spinners follow the active theme. */
+:root{color-scheme:light}

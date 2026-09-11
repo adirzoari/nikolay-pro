@@ -34,3 +34,13 @@ html[dir=ltr] .lucide-arrow-left{transform:rotate(180deg)}
 .footer-credit{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:999px;font-size:inherit;font-weight:600;color:#5b7899;background:#ffffffa8;border:1px solid #e2edf8;white-space:nowrap;transition:color .2s,border-color .2s,transform .2s,box-shadow .2s}
 .footer-credit:hover{color:#0d76e4;border-color:#c9e0f7;transform:translateY(-1px);box-shadow:0 6px 18px #0b6fd114}
 @media(max-width:600px){.footer-bottom{gap:12px}.footer-credit{order:3}}
+
+/* Theme switch: both icons are rendered and CSS picks one, so the markup is state-free. */
+.theme-toggle{display:grid;place-items:center;min-width:44px;min-height:44px;padding:10px;border:0;border-radius:10px;background:transparent;color:var(--navy);transition:background .2s,color .2s}
+.theme-toggle:hover{background:#eef5fd;color:#125dce}
+.theme-toggle svg{grid-area:1/1;transition:opacity .25s ease,transform .4s cubic-bezier(.2,.8,.2,1)}
+.theme-icon-moon{opacity:0;transform:rotate(-70deg) scale(.55)}
+html[data-theme=dark] .theme-icon-sun{opacity:0;transform:rotate(70deg) scale(.55)}
+html[data-theme=dark] .theme-icon-moon{opacity:1;transform:none}
+/* Only while flipping, so hover transitions elsewhere keep their own timing. */
+html[data-theme-anim] *,html[data-theme-anim] *:before,html[data-theme-anim] *:after{transition:background-color .25s ease,border-color .25s ease,color .25s ease,box-shadow .25s ease,filter .25s ease!important}

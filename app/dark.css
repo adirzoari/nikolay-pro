@@ -1,0 +1,162 @@
+/* Dark theme. Every rule is scoped to html[data-theme="dark"], so light mode is untouched.
+   The attribute is set before first paint by the inline script in app/[[...path]]/layout.tsx. */
+
+html[data-theme=dark]{
+  color-scheme:dark;
+  /* Existing tokens flip meaning: --navy is the text colour, --ice the tinted band. */
+  --navy:#e6effb;--muted:#9bb3d1;--blue:#4f9dff;--cyan:#5ad4f5;--line:#1d3a60;--ice:#0b1d34;--green:#2ec6bd;
+  --shadow:0 14px 40px #00040f66;
+  --bg:#081529;--bg-soft:#0b1d34;--surface:#0f2340;--surface-2:#142c4d;
+  --border:#1d3a60;--border-soft:#16304f;--accent-soft:#5aa9ff;--teal:#3fd0c4;--dim:#8098b8;
+}
+
+/* Page, bands and footer */
+html[data-theme=dark] body{background:var(--bg)}
+html[data-theme=dark] .about-section{background:linear-gradient(100deg,#0b1d34,#081529);border-block-color:var(--border-soft)}
+html[data-theme=dark] .quick-diagnosis{background:linear-gradient(180deg,#0a1a30,#081529)}
+html[data-theme=dark] .process-section,html[data-theme=dark] .contact-section{background:linear-gradient(#0a1c33e8,#0a1c33e8),url('/images/air-waves.png') center/cover}
+html[data-theme=dark] .credentials-teaser{background:linear-gradient(120deg,#0b1d34,#081529)}
+html[data-theme=dark] .journey-section{background:linear-gradient(180deg,#0a1a30,#0c2140)}
+html[data-theme=dark] .inner-header{background:var(--bg);border-bottom-color:var(--border-soft)}
+html[data-theme=dark] .inner-main{background:linear-gradient(180deg,#0a1a30 0,#081529 330px)}
+html[data-theme=dark] footer{background:#061120}
+html[data-theme=dark] .footer-top{border-bottom-color:var(--border-soft)}
+html[data-theme=dark] .footer-top nav{color:#93abc9}
+html[data-theme=dark] .footer-bottom{color:#7d96b5}
+html[data-theme=dark] .footer-credit{background:#0f234099;border-color:var(--border);color:#93abc9}
+html[data-theme=dark] .footer-credit:hover{color:var(--accent-soft);border-color:#2b5488;box-shadow:0 6px 18px #00040f4d}
+
+/* Hero */
+html[data-theme=dark] .hero{background:#061120}
+html[data-theme=dark] .hero-background{filter:brightness(.34) saturate(1.15) contrast(1.06)}
+html[data-theme=dark] .hero:after{background:linear-gradient(270deg,#081529d9 0%,#08152999 37%,transparent 70%),linear-gradient(0deg,#081529 0%,transparent 18%)}
+html[data-theme=dark] .hero h1 span{background-image:linear-gradient(100deg,#4f9dff 10%,#5ee0f0 50%,#4f9dff 90%)}
+html[data-theme=dark] .hero-copy p{color:#a8c0de}
+html[data-theme=dark] .hero-signature{color:#6f9fd0}
+html[data-theme=dark] .eyebrow{color:#8ab0dd}
+html[data-theme=dark] .section-heading .eyebrow:before,html[data-theme=dark] .section-heading .eyebrow:after{background:#2c5183}
+html[data-theme=dark] .temperature{background:#0f2340c7;box-shadow:0 12px 32px #00040f66,inset 0 0 15px #ffffff0d}
+html[data-theme=dark] .temperature-ring{border-color:#1e3f6b;border-top-color:#39b8ff;border-right-color:#2b8dff}
+html[data-theme=dark] .temperature-ring svg{color:var(--accent-soft)}
+html[data-theme=dark] .temperature-icons{color:var(--accent-soft)}
+html[data-theme=dark] .airflow-canvas{filter:drop-shadow(0 0 9px #55d8ff99)}
+html[data-theme=dark] .ambient-orb{opacity:.42}
+
+/* Shared surfaces */
+html[data-theme=dark] .glass{background:linear-gradient(125deg,#0f2340f2,#0f2340bf);border-color:var(--border);box-shadow:var(--shadow)}
+html[data-theme=dark] .benefits{box-shadow:0 15px 40px #00040f59}
+html[data-theme=dark] .benefits>div+div{border-inline-start-color:var(--border-soft)}
+html[data-theme=dark] .benefits small{color:#93abc9}
+html[data-theme=dark] .icon-bubble{background:#122c4e;color:var(--accent-soft)}
+html[data-theme=dark] .service-card:hover{box-shadow:0 20px 40px #00040f80}
+html[data-theme=dark] .service-icon{background:var(--surface-2);color:var(--accent-soft);box-shadow:0 4px 17px #00040d66}
+html[data-theme=dark] .card-body a,html[data-theme=dark] .card-body a svg{color:var(--teal)}
+html[data-theme=dark] .service-tags{color:#8fa8c8}
+html[data-theme=dark] .service-tags svg{color:var(--blue)}
+html[data-theme=dark] .about-photo{background:var(--surface)}
+html[data-theme=dark] .about-copy h2 span,html[data-theme=dark] .contact-copy h2 span{color:var(--accent-soft)}
+html[data-theme=dark] .about-checks{color:#a9c2e0}
+html[data-theme=dark] .about-checks svg,html[data-theme=dark] .photo-label svg{color:var(--blue)}
+html[data-theme=dark] .text-link{color:var(--accent-soft)}
+html[data-theme=dark] .image-note{color:#7e93ae}
+html[data-theme=dark] .project-card:after{background:linear-gradient(0deg,#03101fe6,transparent 70%)}
+html[data-theme=dark] .step-circle{background:linear-gradient(145deg,#142c4d,#0f2340);border-color:var(--border);color:var(--accent-soft);box-shadow:0 8px 25px #00040f4d}
+html[data-theme=dark] .step-circle span{background:#2b7ff0;border-color:var(--bg-soft)}
+html[data-theme=dark] .process-grid:before{background:repeating-linear-gradient(90deg,#28497a 0 7px,transparent 7px 14px)}
+html[data-theme=dark] .tip-card button svg,html[data-theme=dark] .faq-item button svg{color:var(--accent-soft)}
+html[data-theme=dark] .faq-item{background:#0f2340a6;border-color:var(--border);box-shadow:0 5px 20px #00040f33}
+html[data-theme=dark] .faq-item:hover{border-color:#2b5488;box-shadow:0 12px 32px #00040f4d}
+html[data-theme=dark] .back-top{background:var(--surface);border-color:var(--border);color:var(--accent-soft)}
+html[data-theme=dark] .social-links a{background:#0f2340d9;border-color:var(--border);color:#c7dbf2;box-shadow:0 6px 18px #00040f4d}
+html[data-theme=dark] .skip-link{background:var(--surface);border-color:var(--blue);color:var(--navy)}
+html[data-theme=dark] .mobile-contact-dock{background:#0b1d34f2;border-color:var(--border);box-shadow:0 12px 35px #00040f80}
+html[data-theme=dark] .mobile-contact-dock a{color:#6fb2ff}
+/* The floating action button's ring matches the page instead of glowing white. */
+html[data-theme=dark] .floating-whatsapp{border-color:#0b1d34}
+
+/* Navigation */
+html[data-theme=dark] .site-nav-bar{background:#0b1d34ed;border-color:var(--border);box-shadow:0 10px 40px #00040f59}
+html[data-theme=dark] .primary-navigation>a:hover,html[data-theme=dark] .primary-navigation>a[aria-current=page]{background:var(--border-soft);color:#7cbcff}
+html[data-theme=dark] .language-menu summary:hover,html[data-theme=dark] .language-menu[open] summary{background:var(--border-soft)}
+html[data-theme=dark] .language-menu nav{background:var(--surface);border-color:var(--border);box-shadow:0 16px 44px #00040f80}
+html[data-theme=dark] .language-menu nav a:hover,html[data-theme=dark] .language-menu nav a[aria-current]{background:var(--border-soft);color:#7cbcff}
+html[data-theme=dark] .nav-toggle{background:var(--surface);border-color:var(--border);color:var(--navy)}
+html[data-theme=dark] .theme-toggle:hover{background:var(--border-soft);color:#7cbcff}
+/* The logo is navy artwork on transparency, so it keeps a light plate to stay legible. */
+html[data-theme=dark] .nav-brand img{background:#eef5fd;border-radius:12px;padding:3px}
+html[data-theme=dark] .brand-logo{background:#eef5fdd9}
+
+/* Buttons */
+html[data-theme=dark] .button:hover{box-shadow:0 9px 24px #0b57c266}
+html[data-theme=dark] .call{background:linear-gradient(115deg,#2f7ff5,#1d63e0);box-shadow:0 5px 14px #00040f66}
+html[data-theme=dark] .call:hover{background:linear-gradient(115deg,#3d8bff,#2a70ef);box-shadow:0 7px 20px #00040f80}
+html[data-theme=dark] .whatsapp,html[data-theme=dark] .whatsapp.white{background:#0e2e2f;color:#4fd8cd;border-color:#1d4d4c}
+html[data-theme=dark] .whatsapp svg,html[data-theme=dark] .whatsapp.white svg{color:#2ec6bd}
+html[data-theme=dark] .whatsapp:hover,html[data-theme=dark] .whatsapp.white:hover{background:#123a3a;box-shadow:0 5px 16px #00040f66}
+html[data-theme=dark] button:focus-visible,html[data-theme=dark] a:focus-visible{outline-color:#6cb4ff}
+
+/* Forms */
+html[data-theme=dark] input,html[data-theme=dark] select,html[data-theme=dark] textarea{background:var(--surface-2);border-color:var(--border);color:var(--navy)}
+html[data-theme=dark] input::placeholder,html[data-theme=dark] textarea::placeholder{color:#7f93b5}
+html[data-theme=dark] input:focus,html[data-theme=dark] select:focus,html[data-theme=dark] textarea:focus{outline-color:var(--blue)}
+html[data-theme=dark] form label{color:#a9c2e0}
+html[data-theme=dark] .optional,html[data-theme=dark] .form-note{color:var(--dim)}
+html[data-theme=dark] .form-status{color:#4fd8cd}
+html[data-theme=dark] .contact-phone svg{color:var(--blue)}
+
+/* Quick fault assistant */
+html[data-theme=dark] .diagnosis-panel{background:var(--surface)}
+html[data-theme=dark] .issue-picker{background:linear-gradient(160deg,#061a35,#0d2f5c)}
+html[data-theme=dark] .issue-picker button{background:#ffffff0a;border-color:#ffffff1a;color:#c9def7}
+html[data-theme=dark] .issue-picker button:hover{background:#ffffff14}
+html[data-theme=dark] .issue-picker button.active{background:var(--border-soft);border-color:var(--blue);color:#eaf3ff;box-shadow:0 10px 24px #00040f80}
+html[data-theme=dark] .issue-picker button.active svg{color:var(--accent-soft)}
+html[data-theme=dark] .result-icon{background:linear-gradient(145deg,#142c4d,#0f2340);color:var(--accent-soft)}
+html[data-theme=dark] .issue-result small{color:var(--teal)}
+html[data-theme=dark] .issue-result em{color:#7d94b3}
+html[data-theme=dark] .issue-tip{background:#0e2e2f;border-color:#1d4d4c;color:#a7e6df}
+html[data-theme=dark] .diagnosis-call{color:#6fb2ff}
+
+/* Journey */
+html[data-theme=dark] .journey-card{background:var(--surface);border-color:var(--border);box-shadow:0 8px 28px #00040f4d}
+html[data-theme=dark] .journey-card h3{color:#dbe9fa}
+html[data-theme=dark] .journey-card p{color:var(--muted)}
+html[data-theme=dark] .journey-number{background:#2b7ff0;border-color:#0c2039;box-shadow:0 0 0 1px #24456f}
+html[data-theme=dark] .journey-step:not(:last-child):before{background:#28497a}
+
+/* Inner pages */
+html[data-theme=dark] .inner-hero .back-link{color:#8fa8c8}
+html[data-theme=dark] .guide-link-strip{border-block-color:var(--border-soft)}
+html[data-theme=dark] .guide-link-strip svg{color:var(--accent-soft)}
+html[data-theme=dark] .guide-articles article{border-bottom-color:var(--border-soft)}
+html[data-theme=dark] .visit-checklist{background:linear-gradient(145deg,#12294a,#0d1f38);border-color:var(--border);box-shadow:0 12px 45px #00040f66}
+html[data-theme=dark] .visit-checklist>svg{color:var(--accent-soft)}
+html[data-theme=dark] .visit-checklist progress{accent-color:var(--blue)}
+html[data-theme=dark] .visit-checklist progress::-webkit-progress-bar{background:var(--border-soft)}
+html[data-theme=dark] .visit-checklist progress::-webkit-progress-value{background:var(--blue)}
+html[data-theme=dark] .checklist-items input{accent-color:var(--blue)}
+html[data-theme=dark] .checklist-items label:has(input:checked) span{color:#4fd8cd}
+html[data-theme=dark] .checklist-count,html[data-theme=dark] .checklist-reset{color:#8fa8c8}
+html[data-theme=dark] .project-detail{background:var(--surface);border-color:var(--border);box-shadow:0 14px 40px #00040f66}
+html[data-theme=dark] .project-detail-body>span{color:#6fb2ff}
+html[data-theme=dark] .project-detail a{color:var(--teal)}
+html[data-theme=dark] .project-gallery-trigger{background:var(--bg-soft)}
+html[data-theme=dark] .certificate-card{background:var(--surface);border-color:var(--border);box-shadow:0 12px 35px #00040f4d}
+html[data-theme=dark] .certificate-card:hover{box-shadow:0 18px 42px #00040f80}
+html[data-theme=dark] .certificate-card span svg{color:var(--accent-soft)}
+/* Certificates and the credentials stack are scans of white paper: they keep a light mat. */
+html[data-theme=dark] .certificate-card img{background:#e9f1f8}
+html[data-theme=dark] .certificate-dialog{background:var(--surface);color:var(--navy);box-shadow:0 20px 80px #00040f99}
+html[data-theme=dark] .certificate-dialog>button{background:var(--border-soft);color:var(--navy)}
+html[data-theme=dark] .certificate-dialog img{background:#e9f1f8;border-radius:10px}
+html[data-theme=dark] .credentials-stack img{background:#e9f1f8;border-color:#24456f;box-shadow:0 18px 45px #00040f80}
+
+@media(min-width:601px){
+  html[data-theme=dark][dir=ltr] .hero:after{background:linear-gradient(90deg,#081529d9 0%,#08152999 37%,transparent 70%),linear-gradient(0deg,#081529 0%,transparent 25%)}
+}
+@media(max-width:1100px){
+  html[data-theme=dark] .primary-navigation{background:var(--bg-soft);border-color:var(--border);box-shadow:0 15px 40px #00040f80}
+}
+@media(max-width:600px){
+  html[data-theme=dark] .hero:after{background:linear-gradient(0deg,#081529 0%,transparent 12%,#081529a6 50%,#081529e8 90%)}
+}

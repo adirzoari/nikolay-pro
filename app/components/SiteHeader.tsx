@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Languages, Menu, Phone, X, ChevronDown, Check } from 'lucide-react';
 import { useLocale } from '../i18n/LocaleProvider';
+import ThemeToggle from './ThemeToggle';
 import { languages, localizedUrl, resolveRoute } from '../i18n/config';
 
 export default function SiteHeader() {
@@ -45,6 +46,7 @@ export default function SiteHeader() {
         <a className="nav-mobile-contact" href={url('/#contact')} onClick={() => setOpen(false)}>{t('צור קשר')}</a>
       </nav>
       <div className="nav-actions">
+        <ThemeToggle/>
         <details className="language-menu">
           <summary aria-label={t('בחירת שפה')}><Languages size={19}/><span>{languages.find(item => item.code === language)?.label}</span><ChevronDown size={14}/></summary>
           <nav aria-label={t('בחירת שפה')}>
