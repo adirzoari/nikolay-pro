@@ -52,11 +52,10 @@ for(const lang of langs)for(const slug of slugs) {
  let body=html.split('<body>')[1]?.split('</body>')[0]||'';
  body=body.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g,'').replace(/<style\b[^>]*>[\s\S]*?<\/style>/g,'').replace(/<details class="language-menu">[\s\S]*?<\/details>/g,'').replace(/<[^>]+>/g,'');
  if(lang!=='he')assert.ok(!/[\u0590-\u05ff]/.test(body),`Hebrew body text: ${route}`);
- if(slug==='certificates')assert.ok(html.includes('noindex'),`Demo certificates should not index: ${route}`);
  pages++;
 }
 const sitemap=fs.readFileSync(path.join(base,'out/sitemap.xml'),'utf8');
-assert.equal((sitemap.match(/<url>/g)||[]).length,21);
-assert.ok(!sitemap.includes('/certificates'));
+assert.equal((sitemap.match(/<url>/g)||[]).length,28);
+assert.ok(sitemap.includes('/certificates'));
 assert.ok(fs.readFileSync(path.join(base,'out/robots.txt'),'utf8').includes('Sitemap:'));
-console.log(`Static SEO checks: ${pages} localized pages; 21 sitemap entries; languages, directions, headings, canonical, alternates, JSON-LD, and assets passed.`);
+console.log(`Static SEO checks: ${pages} localized pages; 28 sitemap entries; languages, directions, headings, canonical, alternates, JSON-LD, and assets passed.`);

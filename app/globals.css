@@ -55,3 +55,11 @@
 .mobile-contact-dock{display:none}
 @media(max-width:800px){.diagnosis-panel{grid-template-columns:1fr}.issue-picker{grid-template-columns:repeat(5,minmax(0,1fr));padding:13px;gap:7px}.issue-picker button{min-height:72px;padding:9px 5px;justify-content:center;flex-direction:column;gap:5px;text-align:center;font-size:.76rem;line-height:1.25}.issue-picker button:hover{transform:none}.issue-result{min-height:0;padding:34px 28px}}
 @media(max-width:600px){.diagnosis-panel{border-radius:20px}.issue-picker{overflow-x:auto;grid-template-columns:repeat(5,92px);scroll-snap-type:x proximity}.issue-picker button{scroll-snap-align:start}.issue-result{display:block;padding:28px 22px}.result-icon{width:54px;height:54px;border-radius:16px;margin-bottom:17px}.issue-result h3{font-size:1.35rem}.issue-result p{font-size:.95rem}.diagnosis-actions{align-items:stretch;flex-direction:column;gap:13px}.diagnosis-call{justify-content:center}.floating-whatsapp{display:none}.mobile-contact-dock{position:fixed;display:grid;grid-template-columns:1fr 1fr;left:12px;right:12px;bottom:12px;z-index:40;border:1px solid #d9eafa;border-radius:16px;padding:5px;background:#fffffff2;box-shadow:0 12px 35px #0629662b;backdrop-filter:blur(16px)}.mobile-contact-dock a{display:flex;justify-content:center;align-items:center;gap:8px;min-height:46px;border-radius:11px;font-weight:700;font-size:.9rem;color:#1059c1}.mobile-contact-dock a:last-child{background:#25D366;color:#fff}body{padding-bottom:76px}}
+
+/* Social profile links (hero). */
+.social-links{display:flex;align-items:center;gap:10px}
+.social-links a{width:42px;height:42px;display:grid;place-items:center;border-radius:50%;border:1px solid #cfe4f6;background:#ffffffd9;color:#15365a;box-shadow:0 6px 18px #176bb112;transition:transform .2s,background .2s,color .2s,border-color .2s}
+.social-links a:hover,.social-links a:focus-visible{transform:translateY(-3px);background:#0874dc;border-color:#0874dc;color:#fff}
+.hero-social{margin-top:24px}
+@media(max-width:900px){.hero-social{justify-content:center}}
+@media(prefers-reduced-motion:reduce){.social-links a{transition:none}.social-links a:hover{transform:none}}
