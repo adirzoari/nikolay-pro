@@ -8,7 +8,7 @@ export default function MotionEffects() {
     const root = document.documentElement;
     const revealGroups = [
       '.section-heading', '.service-card', '.service-tags span', '.about-photo',
-      '.about-copy > *', '.project-card', '.credentials-panel > *', '.process-step',
+      '.about-copy > *', '.project-card', '.process-step',
       '.tips-intro > *', '.tip-card', '.faq-item', '.contact-copy > *',
       '.contact-panel form', '.benefits > div'
     ];

@@ -15,7 +15,6 @@ html[data-theme=dark] body{background:var(--bg)}
 html[data-theme=dark] .about-section{background:linear-gradient(100deg,#0b1d34,#081529);border-block-color:var(--border-soft)}
 html[data-theme=dark] .quick-diagnosis{background:linear-gradient(180deg,#0a1a30,#081529)}
 html[data-theme=dark] .process-section,html[data-theme=dark] .contact-section{background:linear-gradient(#0a1c33e8,#0a1c33e8),url('/images/css/air-waves-1280.webp') center/cover}
-html[data-theme=dark] .credentials-teaser{background:linear-gradient(120deg,#0b1d34,#081529)}
 html[data-theme=dark] .journey-section{background:linear-gradient(180deg,#0a1a30,#0c2140)}
 html[data-theme=dark] .inner-header{background:var(--bg);border-bottom-color:var(--border-soft)}
 html[data-theme=dark] .inner-main{background:linear-gradient(180deg,#0a1a30 0,#081529 330px)}
@@ -149,7 +148,6 @@ html[data-theme=dark] .certificate-card img{background:#e9f1f8}
 html[data-theme=dark] .certificate-dialog{background:var(--surface);color:var(--navy);box-shadow:0 20px 80px #00040f99}
 html[data-theme=dark] .certificate-dialog>button{background:var(--border-soft);color:var(--navy)}
 html[data-theme=dark] .certificate-dialog img{background:#e9f1f8;border-radius:10px}
-html[data-theme=dark] .credentials-stack img{background:#e9f1f8;border-color:#24456f;box-shadow:0 18px 45px #00040f80}
 
 @media(min-width:601px){
   html[data-theme=dark][dir=ltr] .hero:after{background:linear-gradient(90deg,#081529d9 0%,#08152999 37%,transparent 70%),linear-gradient(0deg,#081529 0%,transparent 25%)}
