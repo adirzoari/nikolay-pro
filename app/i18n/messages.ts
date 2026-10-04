@@ -112,5 +112,13 @@ export const rows: string[][] = [
   ['מדיניות פרטיות','Privacy Policy','Политика конфиденциальности','سياسة الخصوصية','የፕራይቬሲ ፖሊሲ','ፖሊሲ ምስጢርነት','Política de privacidad'],
   ['תנאי שימוש','Terms of Use','Условия использования','شروط الاستخدام','የአጠቃቀም ሁኔታዎች','ኩነታት ኣጠቓቕማ','Términos de uso'],
   ['הצהרת נגישות','Accessibility Statement','Заявление о доступности','إعلان إمكانية الوصول','ስለ ተደራሽነት መግለጫ','መግለጺ ተበጻሕነት','Declaración de accesibilidad'],
+  // Accessibility FAB labels
+  ['כלי נגישות','Accessibility tools','Инструменты доступности','أدوات إمكانية الوصول','የተደራሽነት መሳሪያዎች','መሳርሒታት ተበጻሕነት','Herramientas de accesibilidad'],
+  ['גודל טקסט','Text size','Размер текста','حجم النص','የጽሑፍ መጠን','ዓቐን ጽሑፍ','Tamaño de texto'],
+  ['הקטנת גופן','Decrease text size','Уменьшить текст','تصغير الخط','ጽሑፍ ይቀንሱ','ጽሑፍ ኣንኪ','Reducir texto'],
+  ['הגדלת גופן','Increase text size','Увеличить текст','تكبير الخط','ጽሑፍ ያሳዩ','ጽሑፍ ዕቢ','Ampliar texto'],
+  ['ניגודיות גבוהה','High contrast','Высокий контраст','تباين عالٍ','ከፍተኛ ንፅፅር','ልዑል ናይ ቀለማት ፍልልይ','Alto contraste'],
+  ['הפחתת אנימציות','Reduce animations','Меньше анимаций','تقليل الحركة','አነስተኛ አኒሜሽን','ንኡስ ኣኒሜሽን','Reducir animaciones'],
+  ['איפוס הגדרות נגישות','Reset accessibility settings','Сбросить настройки доступности','إعادة ضبط إعدادات الوصول','ቅንብሮችን ዳግም አስጀምር','ቅጥዒታት ዳግም ጀምር','Restablecer configuración de accesibilidad'],
 ];
 

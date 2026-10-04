@@ -5,6 +5,7 @@ import '../inner.css';
 import '../refinements.css';
 import '../dark.css';
 import { direction, resolveRoute } from '../i18n/config';
+import AccessibilityFAB from '../components/AccessibilityFAB';
 
 // Self-hosted by next/font, so there is no third-party round trip before first paint.
 // The Noto families are attached per language below: only ar/am/ti ever download them.
@@ -22,6 +23,8 @@ export const metadata: Metadata = {
 };
 // Runs before first paint so a stored or system dark preference never flashes a light page.
 const themeScript = `try{var s=localStorage.getItem('nikolai-theme');document.documentElement.dataset.theme=(s==='dark'||(s!=='light'&&matchMedia('(prefers-color-scheme:dark)').matches))?'dark':'light'}catch(e){}`;
+// Restores accessibility preferences (font scale, high contrast, reduced motion) before first paint.
+const a11yScript = `try{var f=localStorage.getItem('nikolai-a11y-font'),c=localStorage.getItem('nikolai-a11y-contrast'),m=localStorage.getItem('nikolai-a11y-motion'),d=document.documentElement;if(f&&f!=='0')d.dataset.fontscale=f;if(c==='high')d.dataset.contrast='high';if(m==='reduced')d.dataset.motion='reduced'}catch(e){}`;
 export default async function RootLayout({children, params}: Readonly<{children: React.ReactNode; params: Promise<{path?: string[]}>}>) {
   const { language } = resolveRoute((await params).path);
   const script = language === 'ar' ? arabic : language === 'am' || language === 'ti' ? ethiopic : null;
@@ -29,7 +32,11 @@ export default async function RootLayout({children, params}: Readonly<{children:
     <head>
       <meta name="theme-color" content="#f7fcff"/>
       <script dangerouslySetInnerHTML={{ __html: themeScript }}/>
+      <script dangerouslySetInnerHTML={{ __html: a11yScript }}/>
     </head>
-    <body>{children}</body>
+    <body>
+      {children}
+      <AccessibilityFAB lang={language}/>
+    </body>
   </html>;
 }

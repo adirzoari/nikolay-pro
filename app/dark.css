@@ -158,3 +158,18 @@ html[data-theme=dark] .certificate-dialog img{background:#e9f1f8;border-radius:1
 @media(max-width:600px){
   html[data-theme=dark] .hero:after{background:linear-gradient(0deg,#081529 0%,transparent 12%,#081529a6 50%,#081529e8 90%)}
 }
+
+/* Accessibility FAB — dark mode */
+html[data-theme=dark] .a11y-fab{border-color:#0b1d34}
+html[data-theme=dark] .a11y-panel{background:#0f2340f5;border-color:var(--border);box-shadow:0 16px 48px #00040f66;backdrop-filter:blur(18px)}
+html[data-theme=dark] .a11y-section-label{color:var(--dim)}
+html[data-theme=dark] .a11y-font-row{background:#142c4d}
+html[data-theme=dark] .a11y-font-btn{background:var(--surface-2);border-color:var(--border);color:var(--accent-soft)}
+html[data-theme=dark] .a11y-font-btn:hover:not(:disabled){background:var(--border-soft);border-color:#2b5488}
+html[data-theme=dark] .a11y-font-sample{color:var(--navy)}
+html[data-theme=dark] .a11y-divider{background:var(--border-soft)}
+html[data-theme=dark] .a11y-toggle{border-color:var(--border);color:#a9c2e0}
+html[data-theme=dark] .a11y-toggle:hover{background:var(--border-soft);border-color:#2b5488}
+html[data-theme=dark] .a11y-toggle.on{background:var(--border-soft);border-color:var(--blue);color:var(--accent-soft)}
+html[data-theme=dark] .a11y-reset-btn{border-color:var(--border);color:var(--dim)}
+html[data-theme=dark] .a11y-reset-btn:hover{border-color:#ff7055;color:#ff7055}
