@@ -115,4 +115,10 @@ export const extraRows: string[][] = [
 ['נבנה באהבה ❤️ ע״י אדיר זוארי','Built with love ❤️ by Adir Zoari','Сделано с любовью ❤️ Адиром Зоари','بُني بحب ❤️ على يد أدير زوارى','በፍቅር ❤️ በአዲር ዞአሪ የተሰራ','ብፍቕሪ ❤️ ብኣዲር ዞኣሪ ዝተሰርሐ','Hecho con amor ❤️ por Adir Zoari'],
 ['מעבר למצב כהה','Switch to dark mode','Включить тёмную тему','التبديل إلى الوضع الداكن','ወደ ጨለማ ገጽታ ቀይር','ናብ ጸልማት ሕብሪ ቀይር','Cambiar al modo oscuro'],
 ['מעבר למצב בהיר','Switch to light mode','Включить светлую тему','التبديل إلى الوضع الفاتح','ወደ ብሩህ ገጽታ ቀይር','ናብ ብሩህ ሕብሪ ቀይር','Cambiar al modo claro'],
+// Footer
+['קישורים משפטיים','Legal links','Правовые ссылки','روابط قانونية','ህጋዊ ማስፈንጠሪያዎች','ሕጋዊ መላኸቲታት','Enlaces legales'],
+// SEO page descriptions
+['כיצד אנו אוספים, משתמשים ומגנים על המידע שלכם.','How we collect, use and protect your information.','Как мы собираем, используем и защищаем ваши данные.','كيف نجمع معلوماتكم ونستخدمها ونحميها.','መረጃዎን እንዴት እንሰበስባለን፣ እንጠቀምበታለን፣ እንጠብቀዋለን።','ሓበሬታኹም ከምይ ንእክቦ፣ ንጥቀምን ንሕልዎን።','Cómo recopilamos, usamos y protegemos su información.'],
+['תנאי השימוש החלים על גלישה ושימוש באתר.','The terms of use governing your browsing and use of this site.','Условия использования, регулирующие просмотр сайта и работу с ним.','شروط الاستخدام المطبقة على التصفح واستخدام الموقع.','ድህረ ገጹን ለማሰስና ለመጠቀም የሚተገበሩ የአጠቃቀም ሁኔታዎች።','ኩነታት ኣጠቓቕማ ንምሕላፍ ወብሳይትን ኣጠቓቕማኡን ዝምርሑ።','Los términos de uso que rigen la navegación y uso del sitio.'],
+['מחויבותנו לנגישות ומידע על התאמות שבוצעו.','Our commitment to accessibility and information on adjustments made.','Наши обязательства в области доступности и сведения о выполненных адаптациях.','التزامنا بالنفاذية ومعلومات عن التعديلات التي أُجريت.','ለተደራሽነት ያለን ቁርጠኝነትና ስለተደረጉ ማስተካከያዎች መረጃ።','ናእዳና ንተበጻሕነትን ሓበሬታ ብዛዕባ ዝተጌሩ ምምሕያሻትን።','Nuestro compromiso con la accesibilidad e información sobre los ajustes realizados.'],
 ];
