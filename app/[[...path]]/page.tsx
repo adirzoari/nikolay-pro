@@ -3,6 +3,9 @@ import Home from '../views/Home';
 import ProjectsPage from '../views/ProjectsPage';
 import CertificatesPage from '../views/CertificatesPage';
 import GuidePage from '../views/GuidePage';
+import PrivacyPage from '../views/PrivacyPage';
+import TermsPage from '../views/TermsPage';
+import AccessibilityPage from '../views/AccessibilityPage';
 import { languages, resolveRoute } from '../i18n/config';
 import { LocaleProvider } from '../i18n/LocaleProvider';
 import { pageMetadata, slugs, structuredData } from '../seo';
@@ -18,7 +21,7 @@ export async function generateMetadata({ params }: Props) {
 }
 export default async function Page({ params }: Props) {
   const { language, slug } = resolveRoute((await params).path);
-  const pages = { '': Home, projects: ProjectsPage, certificates: CertificatesPage, guide: GuidePage };
+  const pages = { '': Home, projects: ProjectsPage, certificates: CertificatesPage, guide: GuidePage, privacy: PrivacyPage, terms: TermsPage, accessibility: AccessibilityPage };
   if (!(slug in pages)) notFound();
   const View = pages[slug as keyof typeof pages];
   return <LocaleProvider language={language}><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData(language, slug)).replace(/</g, '\\u003c') }}/><View/></LocaleProvider>;

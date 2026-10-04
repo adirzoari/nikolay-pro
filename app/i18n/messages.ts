@@ -109,5 +109,8 @@ export const rows: string[][] = [
   ['תעודות והסמכות','Certificates and qualifications','Сертификаты и квалификации','الشهادات والمؤهلات','የምስክር ወረቀቶችና ብቃቶች','ምስክር ወረቐታትን ብቕዓትን','Certificados y acreditaciones'],
   ['גלריית ההכשרות המקצועיות של ניקולאי. לחצו על כל תעודה לתצוגה גדולה.','Nikolai’s professional training gallery. Select a certificate to enlarge it.','Галерея профессионального обучения Николая. Нажмите на сертификат для увеличения.','معرض تدريبات نيكولاي المهنية. اضغطوا على أي شهادة لتكبيرها.','የኒኮላይ ሙያዊ ሥልጠና ማዕከል። ለማጉላት ምስክር ወረቀት ይምረጡ።','ናይ ኒኮላይ ሞያዊ ስልጠና ማዕከል። ንምዕባይ ምስክር ወረቐት ምረጹ።','Galería de formación profesional de Nikolai. Pulsa un certificado para ampliarlo.'],
   ['סגירת התצוגה','Close viewer','Закрыть просмотр','إغلاق العرض','ማሳያውን ዝጋ','ምርኢት ዕጾ','Cerrar visor'],
+  ['מדיניות פרטיות','Privacy Policy','Политика конфиденциальности','سياسة الخصوصية','የፕራይቬሲ ፖሊሲ','ፖሊሲ ምስጢርነት','Política de privacidad'],
+  ['תנאי שימוש','Terms of Use','Условия использования','شروط الاستخدام','የአጠቃቀም ሁኔታዎች','ኩነታት ኣጠቓቕማ','Términos de uso'],
+  ['הצהרת נגישות','Accessibility Statement','Заявление о доступности','إعلان إمكانية الوصول','ስለ ተደራሽነት መግለጫ','መግለጺ ተበጻሕነት','Declaración de accesibilidad'],
 ];
 

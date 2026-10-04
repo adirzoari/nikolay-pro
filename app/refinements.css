@@ -43,3 +43,25 @@ html[data-theme=dark] .theme-icon-sun{opacity:0;transform:rotate(70deg) scale(.5
 html[data-theme=dark] .theme-icon-moon{opacity:1;transform:none}
 /* Only while flipping, so hover transitions elsewhere keep their own timing. */
 html[data-theme-anim] *,html[data-theme-anim] *:before,html[data-theme-anim] *:after{transition:background-color .25s ease,border-color .25s ease,color .25s ease,box-shadow .25s ease,filter .25s ease!important}
+
+/* ─── Legal footer links ─────────────────────────────────────────────────── */
+.footer-legal{display:flex;flex-wrap:wrap;gap:6px 22px;padding:14px 0;border-top:1px solid #deedf6;font-size:.8rem;color:#6d87a6}
+.footer-legal a{color:inherit;transition:color .2s}
+.footer-legal a:hover{color:var(--navy)}
+@media(max-width:600px){.footer-legal{gap:6px 16px;font-size:.76rem}}
+
+/* ─── Legal page content ─────────────────────────────────────────────────── */
+.legal-page-content{max-width:820px;margin:0 auto;padding-bottom:90px}
+.legal-meta{font-size:.82rem;color:var(--muted);padding-bottom:24px;margin-bottom:8px;border-bottom:1px solid var(--line)}
+.legal-page-content h2{font-size:1.25rem;font-weight:700;margin:38px 0 12px;color:var(--navy)}
+.legal-page-content h2:first-of-type{margin-top:28px}
+.legal-page-content p{font-size:.97rem;line-height:1.85;margin-bottom:14px}
+.legal-page-content ul,.legal-page-content ol{padding-inline-start:22px;margin-bottom:14px}
+.legal-page-content li{font-size:.97rem;line-height:1.85;margin-bottom:6px}
+.legal-page-content code{font-family:monospace;font-size:.88em;background:#edf5ff;padding:2px 5px;border-radius:4px}
+.legal-page-content a{color:#0871df;text-decoration:underline;text-underline-offset:3px}
+.legal-page-content a:hover{color:#0660c4}
+.form-privacy-note{display:block;margin-top:6px}
+.form-privacy-note a{color:#627d98;text-decoration:underline;text-underline-offset:3px}
+.form-privacy-note a:hover{color:var(--navy)}
+@media(max-width:600px){.legal-page-content{padding-bottom:60px}.legal-page-content h2{font-size:1.1rem;margin-top:30px}}
