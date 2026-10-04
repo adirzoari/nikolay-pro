@@ -154,39 +154,24 @@ export default function AccessibilityFAB({ lang }: Props) {
   }
 
   const isModified = fontScale > 0 || highContrast || reducedMotion;
-<<<<<<< HEAD
-  const t = (key: string) => lbl(lang, key);
-=======
   // Named 'gl' (get label) intentionally — not 't', so the validate-site script
   // does not mistake these internal keys for global translation dictionary lookups.
   const gl = (key: string) => lbl(lang, key);
->>>>>>> 8cf04d3 (fix)
 
   return (
     <div className="a11y-shell">
       {open && (
-<<<<<<< HEAD
-        <div ref={panelRef} className="a11y-panel" role="dialog" aria-label={t('fab')}>
-
-          {/* Font size row */}
-          <p className="a11y-section-label">{t('fontSize')}</p>
-=======
         <div ref={panelRef} className="a11y-panel" role="dialog" aria-label={gl('fab')}>
 
           {/* Font size row */}
           <p className="a11y-section-label">{gl('fontSize')}</p>
->>>>>>> 8cf04d3 (fix)
           <div className="a11y-font-row" dir="ltr">
             <button
               type="button"
               className="a11y-font-btn"
               onClick={() => changeFontScale(-1)}
               disabled={fontScale === 0}
-<<<<<<< HEAD
-              aria-label={t('decrease')}
-=======
               aria-label={gl('decrease')}
->>>>>>> 8cf04d3 (fix)
             >
               <Minus size={14} aria-hidden="true"/>
             </button>
@@ -198,11 +183,7 @@ export default function AccessibilityFAB({ lang }: Props) {
               className="a11y-font-btn"
               onClick={() => changeFontScale(1)}
               disabled={fontScale === 2}
-<<<<<<< HEAD
-              aria-label={t('increase')}
-=======
               aria-label={gl('increase')}
->>>>>>> 8cf04d3 (fix)
             >
               <Plus size={14} aria-hidden="true"/>
             </button>
@@ -218,11 +199,7 @@ export default function AccessibilityFAB({ lang }: Props) {
             aria-pressed={highContrast}
           >
             <Contrast size={16} aria-hidden="true"/>
-<<<<<<< HEAD
-            <span>{t('contrast')}</span>
-=======
             <span>{gl('contrast')}</span>
->>>>>>> 8cf04d3 (fix)
           </button>
 
           {/* Reduced motion toggle */}
@@ -233,22 +210,14 @@ export default function AccessibilityFAB({ lang }: Props) {
             aria-pressed={reducedMotion}
           >
             <ZapOff size={16} aria-hidden="true"/>
-<<<<<<< HEAD
-            <span>{t('motion')}</span>
-=======
             <span>{gl('motion')}</span>
->>>>>>> 8cf04d3 (fix)
           </button>
 
           {/* Reset — only shown when something is active */}
           {isModified && (
             <button type="button" className="a11y-reset-btn" onClick={reset}>
               <RotateCcw size={13} aria-hidden="true"/>
-<<<<<<< HEAD
-              {t('reset')}
-=======
               {gl('reset')}
->>>>>>> 8cf04d3 (fix)
             </button>
           )}
         </div>
@@ -261,13 +230,8 @@ export default function AccessibilityFAB({ lang }: Props) {
         className={`a11y-fab${isModified ? ' has-active' : ''}`}
         onClick={() => setOpen(!open)}
         aria-expanded={open}
-<<<<<<< HEAD
-        aria-label={t('fab')}
-        title={t('fab')}
-=======
         aria-label={gl('fab')}
         title={gl('fab')}
->>>>>>> 8cf04d3 (fix)
       >
         <Accessibility size={22} aria-hidden="true"/>
       </button>
